@@ -1,4 +1,6 @@
 import { LightningElement,wire } from 'lwc';
+import { reduceErrors } from 'c/ldsUtils';
+
 import FIRSTNAME_FIELD from '@salesforce/schema/Contact.FirstName';
 import LASTNAME_FIELD from '@salesforce/schema/Contact.LastName';
 import EMAIL_FIELD from '@salesforce/schema/Contact.Email';
@@ -12,6 +14,12 @@ const COLUMS = [
 
 export default class ContactList extends LightningElement {
     columns = COLUMS;
+    
     @wire(getContacts)
-    contactlists
+    contactlists;
+
+    get errors() {
+        return (this.contactlists.error) ?
+            reduceErrors(this.contactlists.error) : [];
+    }
 }
