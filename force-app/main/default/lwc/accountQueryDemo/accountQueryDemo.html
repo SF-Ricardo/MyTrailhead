@@ -1,3 +1,42 @@
 <template>
-    
+    <span style="display:inline-block;width:50%;">
+        <lightning-card title="左边栏" icon-name="custom:custom12">
+            <table border="1px">
+                <tr>
+                    <td>{Name}</td>
+                    <td>{Active}</td>
+                    <td>{NumberOfEmployees}</td>
+                    <td>{OwnerId}</td>
+                </tr>
+                <template for:each={accounts.data} for:item="acc">
+                    <tr key={acc.Id}>
+                        <td>{acc.Name}</td>
+                        <td>{acc.Active}</td>
+                        <td>{acc.NumberOfEmployees}</td>
+                        <td>{acc.Owner.Name}</td>
+                    </tr>
+                </template>
+            </table>
+        </lightning-card>
+    </span>
+    <span style="display:inline-block;width:50%;">
+        <lightning-card title="右边栏" icon-name="custom:custom10">
+            <table border="1px">
+                <tr>
+                    <td>{Name}</td>
+                    <td>{Active}</td>
+                    <td>{NumberOfEmployees}</td>
+                    <td>{OwnerId}</td>
+                </tr>
+                <template for:each={accounts.data} for:item="acc">
+                    <tr key={acc.Id}>
+                        <td>{acc.Name}</td>
+                        <td>{acc.Active}</td>
+                        <td>{acc.NumberOfEmployees}</td>
+                        <td>{acc.OwnerId}</td>
+                    </tr>
+                </template>
+            </table>
+        </lightning-card>
+    </span>
 </template>

@@ -32,5 +32,39 @@
                 </template>
             </div>
         </div>
+    </lightning-card>    
+
+    <lightning-card title="HelloExpressions" icon-name="custom:custom12">
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+                name="firstName"
+                label="First Name"
+                onchange={updateName}
+            ></lightning-input>
+            <lightning-input
+                name="lastName"
+                label="Last Name"
+                onchange={updateName}
+            ></lightning-input>
+            <p class="slds-var-m-top_medium">
+                Uppercased Full Name: {uppercasedFullName}
+            </p>
+        </div>
     </lightning-card>
+
+    <ul class="slds-var-m-around_medium">
+        <template for:each={AccountList} for:item="acc">
+            <li key={acc.Id}>{acc.Name},{acc.age}</li>
+        </template>
+    </ul>
+
+    <ul class="slds-var-m-around_medium">
+        <template iterator:it={AccountList}>
+            <li key={it.value.Id}>
+                <div if:true={it.first} class="list-first"></div>
+                {it.value.Name}, {it.value.age}
+                <div if:true={it.last} class="list-last"></div>
+            </li>
+        </template>
+    </ul>
 </template>
