@@ -14,4 +14,23 @@
             in action.
         </div>
     </c-view-source>
+
+    <lightning-card title="HelloConditionalRendering" icon-name="custom:custom14">
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+                type="checkbox"
+                label="Show details"
+                onchange={CheckBoxChange}
+            ></lightning-input>
+
+            <div class="slds-var-m-vertical_medium">
+                <template if:true={flag}>
+                    These are the details!
+                </template>
+                <template if:false={flag}>
+                    Not showing details.
+                </template>
+            </div>
+        </div>
+    </lightning-card>
 </template>
