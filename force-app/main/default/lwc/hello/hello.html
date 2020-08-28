@@ -1,0 +1,17 @@
+<template>
+    <p>Hello, {world}!</p>
+    <lightning-input
+            label="world"
+            value={world}
+            onchange={handleChange}>
+    </lightning-input>
+
+    <c-view-source source="lwc/hello">
+        <div style = "width:100%;background:brown;">
+            Bind an HTML element to a component property.
+            Change the value of a bound property when the value of an input
+            field changes. Type something in the input field to see the recipe
+            in action.
+        </div>
+    </c-view-source>
+</template>
