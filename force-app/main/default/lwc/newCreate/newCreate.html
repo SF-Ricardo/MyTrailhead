@@ -1,0 +1,35 @@
+<template>
+    <div style="display:inline-block;width:auto;">
+        <lightning-card>       
+            <lightning-input label="Enter News Name" 
+                name="accName" 
+                required="required" 
+                type="text" 
+                value={newRecord.Name} 
+                onchange={handleNameChange}>
+            </lightning-input>
+            
+            <lightning-input label="Enter Level" 
+                name="accLevel" 
+                type="number" 
+                value={newRecord.Level}>
+            </lightning-input>
+            
+            <lightning-input label="Enter Sendtime" 
+                name="accSendtime" 
+                required="required" 
+                type="datetime" 
+                value={newRecord.Sendtime}>
+            </lightning-input>
+            
+            <lightning-input label="Enter Active" 
+                name="accActive" 
+                type="checkbox" 
+                value={newRecord.Active}
+                onchange={handleActiveChange}>
+            </lightning-input>
+        
+        <lightning-button label="Submit" onclick={handleSave} variant="brand"></lightning-button>
+        </lightning-card>
+    </div>
+</template>

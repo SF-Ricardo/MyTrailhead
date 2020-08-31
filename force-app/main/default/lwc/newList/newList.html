@@ -1,0 +1,26 @@
+<template>
+    <div>
+        <lightning-card>
+            <table border="1">
+                <tr>
+                    <td>index</td>
+                    <td>Name</td>
+                    <td>Level</td>
+                    <td>sendTime</td>
+                    <td>Active</td>
+                    <td>Owner Name</td>
+                </tr>
+                <template for:each={newList.data} for:item="newitem" for:index="index">
+                    <tr key={newitem.Id}>
+                        <td>{index}</td>
+                        <td>{newitem.Name}</td>
+                        <td>{newitem.Level__c}</td>
+                        <td>{newitem.sendTime__c}</td>
+                        <td>{newitem.Active__c}</td>
+                        <td>{newitem.Owner.Name}</td>
+                    </tr>
+                </template>
+            </table>
+        </lightning-card>
+    </div>
+</template>
